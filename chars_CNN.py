@@ -1,9 +1,10 @@
-import os
 import sys
+import os
 import numpy as np
 import cv2
-import tensorflow as tf
+import tensorflow._api.v2.compat.v1 as tf
 from sklearn.model_selection import train_test_split
+tf.disable_v2_behavior()
 
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 alphbets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -178,10 +179,10 @@ class char_cnn_net:
 
 if __name__ == '__main__':
     cur_dir = sys.path[0]
-    data_dir = os.path.join(cur_dir, 'carIdentityData/cnn_char_train')
-    test_dir = os.path.join(cur_dir, 'carIdentityData/cnn_char_test')
+    data_dir = os.path.join(cur_dir, './carIdentityData/cnn_char_train')
+    test_dir = os.path.join(cur_dir, './carIdentityData/cnn_char_test')
     train_model_path = os.path.join(cur_dir, './carIdentityData/model/char_recongnize/model.ckpt')
-    model_path = os.path.join(cur_dir,'./carIdentityData/model/char_recongnize/model.ckpt-660')
+    model_path = os.path.join(cur_dir,'./carIdentityData/model/char_recongnize/model.ckpt-500')
 
     train_flag = 0
     net = char_cnn_net()

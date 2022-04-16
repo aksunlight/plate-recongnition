@@ -2,8 +2,9 @@ import os
 import sys
 import numpy as np
 import cv2
-import tensorflow as tf
+import tensorflow._api.v2.compat.v1 as tf
 from sklearn.model_selection import train_test_split
+tf.disable_v2_behavior()
 
 class plate_cnn_net:
     def __init__(self):

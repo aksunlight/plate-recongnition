@@ -2,7 +2,7 @@
 import base64
 import requests
 
-# client_id 为官网获取的AK，client_secret 为官网获取的SK
+# client_id为官网获取的AK，client_secret 为官网获取的SK
 host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=FwUMziTC7FGKLxHcwyDfGWhE&client_secret=UUd4GbeSjBzvv68rIWnlOsMK9LHfXlGG'
 response = requests.get(host)
 access_token = response.json()['access_token']
